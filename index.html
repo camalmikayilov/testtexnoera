@@ -1,0 +1,273 @@
+<!---------------------->
+<!-- Countdown Timer  -->
+<!---------------------->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Basit Countdown Timer</title>
+</head>
+<body>
+    <div id="timer"></div>
+
+    <script>
+        function countdown() {
+            const endDate = new Date("2023-12-31 23:59:59").getTime();
+            const timerElement = document.getElementById("timer");
+
+            const interval = setInterval(function() {
+                const currentDate = new Date().getTime();
+                const timeRemaining = endDate - currentDate;
+
+                if (timeRemaining <= 0) {
+                    clearInterval(interval);
+                    timerElement.innerHTML = "Geri Sayım Tamamlandı!";
+                } else {
+                    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                    timerElement.innerHTML = `${days}g ${hours}s ${minutes}d ${seconds}s`;
+                }
+            }, 1000);
+        }
+
+        countdown(); // Sayfayı yüklediğinizde geri sayım başlasın
+    </script>
+</body>
+</html> -->
+
+
+
+<!----------------------------------->
+<!--  Interactive Navigation Menu  -->
+<!----------------------------------->
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Navigation Menu</title>
+    <style>
+        /* Basic CSS for the navigation menu */
+        ul.menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.menu li {
+            position: relative;
+            display: inline-block;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        ul.menu li:hover ul.submenu {
+            display: block;
+        }
+
+        ul.menu ul.submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #f0f0f0;
+            padding: 0;
+        }
+
+        ul.menu ul.submenu li {
+            display: block;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li>
+            Menu Item 1
+            <ul class="submenu">
+                <li>Submenu Item 1</li>
+                <li>Submenu Item 2</li>
+                <li>Submenu Item 3</li>
+            </ul>
+        </li>
+        <li>
+            Menu Item 2
+            <ul class="submenu">
+                <li>Submenu Item 4</li>
+                <li>Submenu Item 5</li>
+            </ul>
+        </li>
+        <li>Menu Item 3</li>
+    </ul>
+
+    <script>
+        // JavaScript to toggle submenu visibility on click
+        const menuItems = document.querySelectorAll('.menu li');
+
+        menuItems.forEach((menuItem) => {
+            menuItem.addEventListener('click', () => {
+                const submenu = menuItem.querySelector('.submenu');
+                if (submenu) {
+                    submenu.style.display = (submenu.style.display === 'block') ? 'none' : 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html> -->
+
+
+<!----------------------------->
+<!--  Basic Form Validation  -->
+<!----------------------------->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form Validation</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form id="registrationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+
+        form.addEventListener('submit', function (e) {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Check if email is in a valid format using a regular expression
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Invalid email format');
+                e.preventDefault(); // Prevent form submission
+                return;
+            }
+
+            // Check if password and confirm password match
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                e.preventDefault(); // Prevent form submission
+                return;
+            }
+
+            // Validation passed, the form will be submitted
+            alert('Registration successful');
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+<!-- Task 4: Event Delegation
+Create an HTML list with multiple items and use event delegation to add a click event listener to the parent element. When a list item is clicked, display its text. -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Event Delegation</title>
+</head>
+<body>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+    <div id="itemDisplay"></div>
+
+    <script>
+        const myList = document.getElementById("myList");
+        const itemDisplay = document.getElementById("itemDisplay");
+        
+        myList.addEventListener("click", function(event) {
+            if (event.target.tagName === "LI") {
+                itemDisplay.innerText = `Clicked: ${event.target.innerText}`;
+            }
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- Task 2: Mouse Hover Effect
+Create an HTML element (e.g., a <div>) and use JavaScript to add mouseover and mouseout event listeners. Change the background color when the mouse is over the element and restore it when the mouse leaves. -->
+
+
+    <!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Hover Effect</title>
+    <style>
+        #myElement {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="myElement">Hover over me</div>
+
+    <script>
+        const element = document.getElementById("myElement");
+        element.addEventListener("mouseover", function() {
+            element.style.backgroundColor = "lightgreen";
+        });
+        element.addEventListener("mouseout", function() {
+            element.style.backgroundColor = "lightblue";
+        });
+    </script>
+</body>
+</html> -->
+
+
+<!-- Task 1: Basic Button Click Event
+Create an HTML button and use JavaScript to add a click event listener. When the button is clicked, display an alert message. -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Button Click Event</title>
+</head>
+<body>
+    <button id="myButton">Click Me</button>
+
+    <script>
+        const button = document.getElementById("myButton");
+        button.addEventListener("click", function() {
+            alert("Button Clicked!");
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
